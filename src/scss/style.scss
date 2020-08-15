@@ -1,0 +1,80 @@
+// Color Theme
+$red-main: #FF4A4A;
+
+$theme-colors:(
+    "red-main": $red-main
+);
+
+// Add bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+// Add fonts
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700|Work+Sans:400,700&display=swap');
+$serif: 'PT Serif';
+$sans: 'Work Sans';
+
+body, html {
+  font-family: $sans, sans-serif;
+}
+
+.navbar {
+  #close-menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    .navbar-brand {
+      display: none;
+    }
+
+    .navbar-collapse {
+      background: red;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: 0.3s ease;
+    }
+    .collapse {
+      background: red;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: 0.3s ease;
+      .navbar-nav {
+        background: red;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .nav-link {
+          color: black;
+          font-size: 2rem;
+          text-transform: uppercase;
+        }
+
+        #close-menu {
+          position: fixed;
+          top: 30px;
+          right: 30px;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
